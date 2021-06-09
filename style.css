@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+}
+
+#searchTerm {
+    border-color: aquamarine;
+}
+
+label {
+    color: rebeccapurple;
+    border-style: double;
+    border-color: brown;
+    border-inline-color: green;
+}
