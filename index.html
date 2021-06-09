@@ -6,6 +6,7 @@
 		// TODO: create a handler
 		window.addEventListener("load", function () {
 			let form = document.getElementById("searchForm");
+			let searchTerm = document.getElementById("searchTerm")
 			let actions = {
 				"google": "https://www.google.com/search",
 				"duckDuckGo": "https://duckduckgo.com/",
@@ -15,6 +16,10 @@
 
 
 			form.addEventListener("submit", function() {
+				if(searchTerm.value === "") {
+					alert("Please enter some text in the search box!!!");
+					event.preventDefault();
+				}
 				let radioInputSelector = document.querySelector("input[name=engine]:checked");
 				let searchEngineChoice = radioInputSelector.value;
 				let actionURL = actions[searchEngineChoice];
@@ -27,7 +32,7 @@
 <body>
 
 	<form id="searchForm">
-		<input name="q" type="text" />
+		<input id="searchTerm" name="q" type="text" />
 
 		<label>
 			<input type="radio" name="engine" value="google" />
